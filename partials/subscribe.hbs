@@ -1,0 +1,12 @@
+{{!-- Email subscribe form at the bottom of the page --}}
+{{#if @labs.subscribers}}
+<section class="subscribe subscribe-email">
+  <p class="subscribe-message">Get the latest posts delivered to your inbox.</p>
+  {{subscribe_form placeholder="Your email address"}}
+  <span class="subscribe-rss">or <a href="{{@blog.url}}/rss/">subscribe via RSS</a></span>
+</section>
+{{else}}
+<section class="subscribe subscribe-rss">
+  <p class="subscribe-message">Get the latest posts delivered to your inbox. <a href="{{@blog.url}}/rss/">Subscribe via RSS</a></p>
+</section>
+{{/if}}

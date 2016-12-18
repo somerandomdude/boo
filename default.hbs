@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{!-- Page Meta --}}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+
+  {{!-- Mobile Meta --}}
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {{!-- Favicon --}}
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+  {{!-- Style --}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+  {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+  <a class="site-top" name="content"></a>
+  <div class="site-info">
+    <a class="site-info-toggle" onclick="document.querySelector('.site-info').classList.toggle('active');">Menu</a>
+    <a class="site-title" href="{{@blog.url}}">{{@blog.title}}</a>
+    <div class="site-info-content">
+    	<p class="site-description">{{@blog.description}}</p>
+    	{{navigation}}
+    	<span class="site-copyright">&copy; {{date format="YYYY"}}</span>
+    </div>
+  </div>
+
+  <main class="site-content" role="main">
+    {{{body}}}
+  </main>
+  <footer class="site-footer">
+    {{ghost_foot}}
+  </footer>
+</body>
+</html>

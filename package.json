@@ -1,0 +1,36 @@
+{
+    "name": "boo",
+    "description": "A slim, straight-forward Ghost theme for single authors.",
+    "demo": "",
+    "version": "0.1.0",
+    "engines": {
+        "ghost": ">=0.9.0 <1.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "P.J. Onori",
+        "email": "pj@somerandomdude.com",
+        "url": "http://somerandomdude.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": "",
+    "contributors": ""
+}

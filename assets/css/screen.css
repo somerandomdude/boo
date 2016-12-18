@@ -1,0 +1,604 @@
+
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+body { margin: 0; }
+article, aside, details,
+figcaption, figure,
+footer, header,
+main, menu, nav, section, summary { display:block; }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+a { background-color: transparent;}
+a:active, a:hover { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+mark { background: #ff0; color: #000; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 1em 40px; }
+hr { box-sizing: content-box; height: 0; }
+pre { overflow: auto; }
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+input { line-height: normal; }
+input[type="checkbox"],
+input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { height: auto; }
+input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+textarea { overflow: auto; }
+optgroup { font-weight: bold; }
+table{ border-collapse: collapse; border-spacing: 0; }
+td, th{ padding: 0; }
+
+
+
+html {
+  font-size: 8px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; /*https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage*/
+  line-height: 1.45;
+  font-weight: 400;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /*TODO: Needed? */
+  color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.05;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+a {
+  color: #1aa8f8;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #4a46aa;
+}
+
+hr {
+  border: 1px solid #555;
+}
+
+.site-top {
+  position: absolute;
+  top: 0;
+}
+
+.read-more {
+  font-weight: 700;
+}
+
+.button {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  padding: .5rem 1rem;
+}
+
+.button + .button {
+  margin-left: 1rem;
+}
+
+.pagination {
+  margin: 6rem 0;
+}
+
+.back-to-top {
+  font-size: 0;
+  margin: 2rem 0;
+  display: block;
+  text-align: center;
+}
+
+.back-to-top:before {
+  content: "\27A4";
+  display: inline-block;
+  transform: rotate(-90deg);
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.site-info,
+.site-content {
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.site-info {
+  padding: 2rem;
+  overflow-y: auto;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.site-info a,
+.site-info a:visited
+ {
+  color: #000;
+}
+
+.site-title {
+  font-size: 16px; /*TODO: REM? */
+  font-weight: 700;
+}
+
+.site-description {
+  font-size: 14px; /*TODO: REM? */
+}
+
+.site-info-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  font-size: 0;
+  text-align: center;
+}
+
+.site-info-toggle:before {
+  content: "☰";
+  font-size: 16px;
+}
+
+.site-copyright {
+  display: block;
+  margin-top: 4rem;
+  font-size: 11px; /*TODO: REM? */
+  color: #555;
+}
+
+.site-info.active {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding-bottom: 4rem;
+  z-index: 2;
+}
+
+.site-info-content {
+  height: 0;
+  overflow-y: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.site-info.active .site-info-content {
+  height: auto;
+  opacity: 1;
+}
+
+.site-info.active .site-info-toggle:before {
+  content: "×";
+  font-size: 18px;
+}
+
+.nav-group {
+  margin: 4rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-group li {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.nav-group a {
+  padding: 1rem 0;
+}
+
+.post {
+  margin: 4rem 0;
+}
+
+.post.featured .post-title:before {
+  content: "Featured";
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: -1em;
+  display: block;
+}
+
+.post-title,
+.post-title a {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 3.2rem;
+  display: block;
+  color: #000;
+  line-height: 1.15;
+}
+
+.post-content {
+  line-height: 1.65;
+}
+
+.post-content p + p {
+  margin-top: 3rem;
+}
+
+.post-content blockquote {
+  font-weight: 600;
+  margin: 5rem 0rem;
+}
+
+.post-content blockquote p:before {
+  content:"“";
+  color:#555;
+  margin-left: -1rem;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 1em;
+}
+
+.post-content img {
+  max-width: 100%;
+}
+
+.post-content blockquote cite {
+  display: block;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.post-content pre {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  margin: 2rem -2rem;
+}
+
+.post-image {
+  object-fit: cover;
+  width: calc(100% + 4rem);
+  height: 20rem;
+  margin: 0 0 4rem -2rem;
+}
+
+.post-meta {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.post-template .post-content > p:last-child:after {
+  content: "※";
+  margin-left: .5em;
+  color: #555;
+}
+
+.subscribe {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  margin-left: -2rem;
+  width: 100%;
+}
+
+.subscribe .subscribe-message {
+  margin-top: 0;
+}
+
+.subscribe-email form {
+  display: flex;
+  justify-content: center;
+}
+
+/* TODO: Fix this up */
+.subscribe-email .form-group {
+  width: 100%;
+  flex: 1 auto;
+}
+
+.subscribe-email input {
+  border:0;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  color: #fff;
+  background: #000;
+  padding: .6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*TODO: clean up markup for button */
+.subscribe-email button {
+  border: 2px solid #fff;
+  background: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  margin-left: 1rem;
+}
+
+.subscribe-email .subscribe-rss {
+  display: block;
+  font-size: 11px; /* TODO: REM */
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.subscribe-rss .subscribe-message {
+  margin-bottom: 0;
+}
+
+.post-next {
+  font-size: 11px; /* TODO: REM */
+  font-weight: 700;
+  display: block;
+  margin: 6rem 0;
+}
+
+.tag-title {
+  margin-bottom: 0;
+}
+
+.tag-title:before {
+  content: "Tag";
+  display: block;
+  font-size: 11px; /*TODO: REM */
+  font-weight: 700;
+}
+
+.tag-description {
+  font-size: 12px; /*TODO: REM */
+}
+
+.site-footer {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.site-footer:empty {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .post-template .post {
+    margin-top: 0rem;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+
+  .site-info,
+  .site-content {
+    padding: 0 6rem;
+  }
+
+  .site-info {
+    padding: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .site-info-toggle {
+    top: 4rem;
+    right: 4rem;
+  }
+
+}
+
+/* tablets/desktops and up */
+@media (min-width: 992px) {
+  body {
+    margin: 6rem 0 12rem 0;
+  }
+
+  .site-info {
+    margin-top: 0;
+    width: 22.5vw;
+    height: 100vh;
+    background: none;
+    position: fixed;
+    padding: 7.6rem 2.5rem;
+    top:0;
+  }
+
+  /*TEMP*/
+  .site-info {
+    width: 22.5%;
+  }
+
+  .site-title {
+    width: calc(100% - 2rem);
+    line-height: 1.15;
+    display: block;
+  }
+
+  .site-info-content {
+    height: auto;
+  }
+
+  .site-description {
+    font-size: 11px; /*TODO: REM? */
+  }
+
+  .site-info-toggle {
+    top: 5.6rem;
+    right: 0;
+  }
+
+  .nav-group {
+    margin-top: 3rem;
+  }
+
+  .nav-group li {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .site-content,
+  .site-footer {
+    width: 77.5vw;
+    margin-left: 22.5vw;
+    padding: 0 25vw 0 5vw;
+  }
+
+  /*TEMP*/
+  .site-content,
+  .site-footer {
+    width: 77.5%;
+    margin-left: 22.5%;
+    padding: 0 25% 0 5%;
+  }
+
+  .post {
+    margin: 6rem 0;
+  }
+
+  .post-content img {
+    max-width: calc(100% + 10rem);
+    margin-left: -5rem;
+  }
+
+  .subscribe {
+    width: calc(100% + 2rem);
+    margin: 6rem 0 6rem -2rem;
+  }
+
+  .subscribe .form-group {
+    max-width: 30rem;
+  }
+}
+
+/* large desktops and up */
+@media screen and (min-width: 1200px) {
+  .site-info {
+    width: 20vw;
+    padding: 7.6rem 5rem;
+  }
+
+  /*TEMP*/
+  .site-info {
+    width: 20%;
+  }
+
+  .site-title {
+    width: 100%;
+  }
+
+  .site-info-toggle {
+    display: none;
+  }
+
+  .site-info:hover .site-info-content {
+    opacity: 1;
+  }
+
+  .nav-group {
+    margin-top: 2rem;
+  }
+
+  .nav-group li {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .nav-group a {
+    padding: 0;
+  }
+
+  .site-content,
+  .site-footer {
+    width: 80vw;
+    margin-left: 20vw;
+    padding: 0 25vw 0 5vw;
+  }
+
+  /*TEMP*/
+  .site-content,
+  .site-footer {
+    width: 80%;
+    margin-left: 20%;
+    padding: 0 25% 0 5%;
+  }
+
+  .post-image {
+    object-fit: cover;
+    width: calc(100% + 10vw);
+    height: 20vw;
+    margin-left: -5vw;
+  }
+
+  /*TEMP*/
+  .post-image {
+    object-fit: cover;
+    width: 110%;
+    margin-left: -5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+
+  body {
+    max-width: 1600px;
+    margin: 6rem auto 12rem auto;
+  }
+
+  .post-image {
+    object-fit: cover;
+    height: 40rem;
+  }
+}

@@ -1,0 +1,32 @@
+<div class="site-nav">
+    <ul class="nav-group nav-pages">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+
+        {{#if @labs.subscribers}}
+            <li><a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a></li>
+        {{else}}
+            <li><a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a></li>
+        {{/if}}
+    </ul>
+    {{!--
+    {{#get "tags"}}
+      <ul class="nav-group nav-tags">
+      {{#foreach tags}}
+        <li>
+          <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+        </li>
+      {{/foreach}}
+      </ul>
+    {{/get}}
+    --}}
+    <ul class="nav-group nav-social">
+        {{#if @blog.facebook}}
+        <li><a class="site-facebook" href="{{facebook_url @blog.facebook}}">{{@blog.facebook}}</a></li>
+        {{/if}}
+        {{#if @blog.twitter}}
+        <li><a class="site-twitter" href="{{twitter_url @blog.twitter}}">{{@blog.twitter}}</a></li>
+        {{/if}}
+    </ul>
+</div>
