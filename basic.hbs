@@ -27,20 +27,8 @@
 </head>
 <body class="{{body_class}} loading">
   <a class="site-top" name="content"></a>
-  <div class="site-info">
-    <a class="site-info-toggle" onclick="document.querySelector('.site-info').classList.toggle('active');">Menu</a>
-    <a class="site-title" href="{{@blog.url}}">{{@blog.title}}</a>
-    <div class="site-info-content">
-    	<p class="site-description">{{@blog.description}}</p>
-    	{{navigation}}
-    	<span class="site-copyright">&copy; {{date format="YYYY"}}</span>
-    </div>
-  </div>
   <main class="site-content" role="main">
     {{{body}}}
   </main>
-  <footer class="site-footer">
-    {{ghost_foot}}
-  </footer>
 </body>
 </html>

@@ -1,76 +1,177 @@
-
-
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
+@charset 'UTF-8';
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
 }
-body { margin: 0; }
-article, aside, details,
-figcaption, figure,
-footer, header,
-main, menu, nav, section, summary { display:block; }
-audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
-audio:not([controls]) { display: none; height: 0; }
-[hidden], template { display: none; }
-a { background-color: transparent;}
-a:active, a:hover { outline: 0; }
-abbr[title] { border-bottom: 1px dotted; }
-b, strong { font-weight: bold; }
-dfn { font-style: italic; }
-mark { background: #ff0; color: #000; }
-small { font-size: 80%; }
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-img { border: 0; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 1em 40px; }
-hr { box-sizing: content-box; height: 0; }
-pre { overflow: auto; }
-code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
-button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; }
-button { overflow: visible; }
-button, select { text-transform: none; }
-button, html input[type="button"],
-input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
-button[disabled], html input[disabled] { cursor: default; }
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-input { line-height: normal; }
-input[type="checkbox"],
-input[type="radio"] { box-sizing: border-box; padding: 0; }
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button { height: auto; }
-input[type="search"] { -webkit-appearance: textfield; }
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-textarea { overflow: auto; }
-optgroup { font-weight: bold; }
-table{ border-collapse: collapse; border-spacing: 0; }
-td, th{ padding: 0; }
 
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
 
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button, input, optgroup, select, textarea {
+  font: inherit;
+  margin: 0;
+  color: inherit;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html input[type='button'], input[type='reset'], input[type='submit'] {
+  cursor: pointer;
+
+  -webkit-appearance: button;
+}
+
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type='checkbox'], input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type='search'] {
+  -webkit-appearance: textfield;
+}
+
+input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0;
+}
 
 html {
   font-size: 8px;
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  /*TODO: Remove?*/
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; /*https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage*/
-  line-height: 1.45;
   font-weight: 400;
+  /*TODO: Combine all above into the font rule */
   font-smooth: always;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; /*TODO: Needed? */
+  /*https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage*/
+  line-height: 1.45;
+  margin: 0;
   color: #000;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.05;
-}
-
-h1, h2, h3 {
   font-weight: 500;
+  line-height: 1.05;
 }
 
 h1 {
@@ -91,12 +192,12 @@ h4, h5, h6 {
 }
 
 a {
-  color: #1aa8f8;
   text-decoration: none;
+  color: #1aa8f8;
 }
 
 a:visited {
-  color: #4a46aa;
+  color: #056da7;
 }
 
 hr {
@@ -113,12 +214,12 @@ hr {
 }
 
 .button {
-  font-weight: 700;
   font-size: 1.2rem;
+  font-weight: 700;
   display: inline-block;
+  padding: .5rem 1rem;
   color: #fff;
   background: #000;
-  padding: .5rem 1rem;
 }
 
 .button + .button {
@@ -131,88 +232,98 @@ hr {
 
 .back-to-top {
   font-size: 0;
-  margin: 2rem 0;
   display: block;
+  margin: 2rem 0;
   text-align: center;
 }
 
 .back-to-top:before {
-  content: "\27A4";
-  display: inline-block;
-  transform: rotate(-90deg);
-  padding: 10px;
-  background: #000;
-  color: #fff;
   font-size: 1rem;
+  display: inline-block;
+  padding: 10px;
+  content: '\27A4';
+  transform: rotate(-90deg);
+  color: #fff;
+  /*TODO: REM?*/
+  background: #000;
 }
 
-.site-info,
-.site-content {
+.site-info, .site-content {
   box-sizing: border-box;
   padding: 0 2rem;
 }
 
 .site-info {
-  padding: 2rem;
   overflow-y: auto;
-  -webkit-touch-callout: none;
+  padding: 2rem;
+  /*TODO: Remove?*/
   user-select: none;
+
+  -webkit-touch-callout: none;
 }
 
-.site-info a,
-.site-info a:visited
- {
+.site-info a, .site-info a:visited {
   color: #000;
 }
 
 .site-title {
-  font-size: 16px; /*TODO: REM? */
+  font-size: 1.6rem;
   font-weight: 700;
+  color: #000;
+}
+
+.site-title:visited {
+  color: #000;
 }
 
 .site-description {
-  font-size: 14px; /*TODO: REM? */
+  font-size: 1.4rem;
 }
 
 .site-info-toggle {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 1.5rem 2rem;
   font-size: 0;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
   text-align: center;
 }
 
 .site-info-toggle:before {
-  content: "☰";
   font-size: 16px;
+  content: '☰';
 }
 
 .site-copyright {
+  font-size: 11px;
   display: block;
   margin-top: 4rem;
-  font-size: 11px; /*TODO: REM? */
+  /*TODO: REM? */
   color: #555;
 }
 
 .site-info.active {
   position: fixed;
+  z-index: 2;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  background: #fff;
   padding-bottom: 4rem;
-  z-index: 2;
+  background: #fff;
+}
+
+.loading .site-info-content {
+  transition: none;
 }
 
 .site-info-content {
-  height: 0;
   overflow-y: hidden;
-  opacity: 0;
+  height: 0;
   transition: opacity .3s;
+  opacity: 0;
 }
 
 .site-info.active .site-info-content {
@@ -221,8 +332,9 @@ hr {
 }
 
 .site-info.active .site-info-toggle:before {
-  content: "×";
   font-size: 18px;
+  content: '×';
+  /*TODO: REM*/
 }
 
 .nav-group {
@@ -232,8 +344,8 @@ hr {
 }
 
 .nav-group li {
-  margin-top: 2rem;
   font-size: 2rem;
+  margin-top: 2rem;
 }
 
 .nav-group a {
@@ -245,21 +357,20 @@ hr {
 }
 
 .post.featured .post-title:before {
-  content: "Featured";
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-top: -1em;
   display: block;
+  margin-top: -1em;
+  content: 'Featured';
 }
 
-.post-title,
-.post-title a {
-  margin-top: 0;
-  font-weight: 300;
+.post-title, .post-title a {
   font-size: 3.2rem;
-  display: block;
-  color: #000;
+  font-weight: 300;
   line-height: 1.15;
+  display: block;
+  margin-top: 0;
+  color: #000;
 }
 
 .post-content {
@@ -272,17 +383,16 @@ hr {
 
 .post-content blockquote {
   font-weight: 600;
-  margin: 5rem 0rem;
+  margin: 5rem 0;
 }
 
 .post-content blockquote p:before {
-  content:"“";
-  color:#555;
   margin-left: -1rem;
+  content: '“';
+  color: #555;
 }
 
-.post-content ul,
-.post-content ol {
+.post-content ul, .post-content ol {
   padding-left: 1em;
 }
 
@@ -291,45 +401,46 @@ hr {
 }
 
 .post-content blockquote cite {
+  font-size: 1.2rem;
   display: block;
   color: #555;
-  font-size: 1.2rem;
 }
 
 .post-content pre {
-  background: #000;
-  color: #fff;
-  padding: 2rem;
   margin: 2rem -2rem;
+  padding: 2rem;
+  color: #fff;
+  background: #000;
 }
 
 .post-image {
-  object-fit: cover;
   width: calc(100% + 4rem);
-  height: 20rem;
+  max-height: 20rem;
   margin: 0 0 4rem -2rem;
+
+  object-fit: cover;
 }
 
 .post-meta {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #555;
   font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 1rem;
+  color: #555;
 }
 
 .post-template .post-content > p:last-child:after {
-  content: "※";
   margin-left: .5em;
+  content: '※';
   color: #555;
 }
 
 .subscribe {
-  background: #000;
-  color: #fff;
+  width: 100%;
+  margin-left: -2rem;
   padding: 2rem;
   text-align: center;
-  margin-left: -2rem;
-  width: 100%;
+  color: #fff;
+  background: #000;
 }
 
 .subscribe .subscribe-message {
@@ -338,41 +449,42 @@ hr {
 
 .subscribe-email form {
   display: flex;
+
   justify-content: center;
 }
 
 /* TODO: Fix this up */
 .subscribe-email .form-group {
-  width: 100%;
   flex: 1 auto;
+  width: 100%;
 }
 
 .subscribe-email input {
-  border:0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .6rem;
+  color: #fff;
+  border: 0;
   border-bottom: 2px solid #fff;
   outline: none;
-  color: #fff;
   background: #000;
-  padding: .6rem;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /*TODO: clean up markup for button */
 .subscribe-email button {
-  border: 2px solid #fff;
-  background: #000;
-  color: #fff;
   font-size: 1.2rem;
   font-weight: 700;
-  padding: .5rem 1rem;
   margin-left: 1rem;
+  padding: .5rem 1rem;
+  color: #fff;
+  border: 2px solid #fff;
+  background: #000;
 }
 
 .subscribe-email .subscribe-rss {
-  display: block;
-  font-size: 11px; /* TODO: REM */
+  font-size: 1.1rem;
   font-weight: 600;
+  display: block;
   margin-top: 2rem;
 }
 
@@ -381,7 +493,7 @@ hr {
 }
 
 .post-next {
-  font-size: 11px; /* TODO: REM */
+  font-size: 1.1rem;
   font-weight: 700;
   display: block;
   margin: 6rem 0;
@@ -392,23 +504,48 @@ hr {
 }
 
 .tag-title:before {
-  content: "Tag";
-  display: block;
-  font-size: 11px; /*TODO: REM */
+  font-size: 1.1rem;
   font-weight: 700;
+  display: block;
+  content: 'Tag';
 }
 
 .tag-description {
-  font-size: 12px; /*TODO: REM */
+  font-size: 1.2rem;
 }
 
 .site-footer {
   margin-top: 5rem;
   margin-bottom: 5rem;
+  /*TODO: Combine?*/
 }
 
 .site-footer:empty {
   display: none;
+}
+
+.error-404 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 2rem;
+}
+
+.error-404-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.error-404-title {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.error-404-message {
+  font-size: 2rem;
 }
 
 @media (max-width: 767px) {
@@ -416,15 +553,13 @@ hr {
     margin-top: 0rem;
   }
 }
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   html {
     font-size: 10px;
   }
 
-  .site-info,
-  .site-content {
+  .site-info, .site-content {
     padding: 0 6rem;
   }
 
@@ -438,8 +573,10 @@ hr {
     right: 4rem;
   }
 
+  .error-404 {
+    padding: 0 25%;
+  }
 }
-
 /* tablets/desktops and up */
 @media (min-width: 992px) {
   body {
@@ -447,13 +584,15 @@ hr {
   }
 
   .site-info {
-    margin-top: 0;
+    /*TODO: Remove?*/
+    position: fixed;
+    top: 0;
     width: 22.5vw;
     height: 100vh;
+    margin-top: 0;
+    padding: 7.5rem 2.5rem;
     background: none;
-    position: fixed;
-    padding: 7.6rem 2.5rem;
-    top:0;
+    /*TODO: Remove?*/
   }
 
   /*TEMP*/
@@ -462,17 +601,18 @@ hr {
   }
 
   .site-title {
-    width: calc(100% - 2rem);
     line-height: 1.15;
     display: block;
+    width: calc(100% - 2rem);
   }
 
   .site-info-content {
     height: auto;
+    /*TODO: Remove?*/
   }
 
   .site-description {
-    font-size: 11px; /*TODO: REM? */
+    font-size: 1.1rem;
   }
 
   .site-info-toggle {
@@ -485,20 +625,11 @@ hr {
   }
 
   .nav-group li {
-    margin-top: 1.5rem;
     font-size: 1.2rem;
+    margin-top: 1.5rem;
   }
 
-  .site-content,
-  .site-footer {
-    width: 77.5vw;
-    margin-left: 22.5vw;
-    padding: 0 25vw 0 5vw;
-  }
-
-  /*TEMP*/
-  .site-content,
-  .site-footer {
+  .site-content, .site-footer {
     width: 77.5%;
     margin-left: 22.5%;
     padding: 0 25% 0 5%;
@@ -522,17 +653,11 @@ hr {
     max-width: 30rem;
   }
 }
-
 /* large desktops and up */
 @media screen and (min-width: 1200px) {
   .site-info {
-    width: 20vw;
-    padding: 7.6rem 5rem;
-  }
-
-  /*TEMP*/
-  .site-info {
     width: 20%;
+    padding: 7.5rem 5rem;
   }
 
   .site-title {
@@ -552,53 +677,37 @@ hr {
   }
 
   .nav-group li {
-    margin-top: 1rem;
     font-size: 1.2rem;
+    margin-top: 1rem;
   }
 
   .nav-group a {
     padding: 0;
   }
 
-  .site-content,
-  .site-footer {
-    width: 80vw;
-    margin-left: 20vw;
-    padding: 0 25vw 0 5vw;
-  }
-
-  /*TEMP*/
-  .site-content,
-  .site-footer {
+  .site-content, .site-footer {
     width: 80%;
     margin-left: 20%;
     padding: 0 25% 0 5%;
   }
 
   .post-image {
-    object-fit: cover;
-    width: calc(100% + 10vw);
-    height: 20vw;
-    margin-left: -5vw;
-  }
-
-  /*TEMP*/
-  .post-image {
-    object-fit: cover;
     width: 110%;
+    max-height: 20vw;
     margin-left: -5%;
+
+    object-fit: cover;
   }
 }
-
 @media screen and (min-width: 1600px) {
-
   body {
     max-width: 1600px;
     margin: 6rem auto 12rem auto;
   }
 
   .post-image {
-    object-fit: cover;
-    height: 40rem;
+    max-height: 40rem;
   }
 }
+
+/*# sourceMappingURL=screen.css.map */
