@@ -101,6 +101,7 @@ button, html input[type='button'], input[type='reset'], input[type='submit'] {
   cursor: pointer;
 
   -webkit-appearance: button;
+     -moz-appearance: button;
 }
 
 button[disabled], html input[disabled] {
@@ -127,6 +128,7 @@ input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-o
 
 input[type='search'] {
   -webkit-appearance: textfield;
+     -moz-appearance: textfield;
 }
 
 input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-decoration {
@@ -148,21 +150,14 @@ td, th {
 
 html {
   font-size: 8px;
-  overflow-x: hidden;
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-  /*TODO: Remove?*/
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  /*TODO: Combine all above into the font rule */
+  font: 400 1.6rem/1.45 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-smooth: always;
-  /*https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage*/
-  line-height: 1.45;
   margin: 0;
   color: #000;
 
@@ -292,15 +287,14 @@ hr {
 }
 
 .site-info-toggle:before {
-  font-size: 16px;
+  font-size: 1.6rem;
   content: '☰';
 }
 
 .site-copyright {
-  font-size: 11px;
+  font-size: 1.1rem;
   display: block;
   margin-top: 4rem;
-  /*TODO: REM? */
   color: #555;
 }
 
@@ -332,9 +326,8 @@ hr {
 }
 
 .site-info.active .site-info-toggle:before {
-  font-size: 18px;
+  font-size: 1.8rem;
   content: '×';
-  /*TODO: REM*/
 }
 
 .nav-group {
@@ -400,7 +393,7 @@ hr {
   max-width: 100%;
 }
 
-.post-content blockquote cite {
+.post-content cite {
   font-size: 1.2rem;
   display: block;
   color: #555;
@@ -515,9 +508,7 @@ hr {
 }
 
 .site-footer {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  /*TODO: Combine?*/
+  margin: 5rem 0;
 }
 
 .site-footer:empty {
@@ -577,38 +568,25 @@ hr {
     padding: 0 25%;
   }
 }
-/* tablets/desktops and up */
+/* Tablets/desktops and up */
 @media (min-width: 992px) {
   body {
     margin: 6rem 0 12rem 0;
   }
 
   .site-info {
-    /*TODO: Remove?*/
     position: fixed;
     top: 0;
-    width: 22.5vw;
+    width: 22.5%;
     height: 100vh;
     margin-top: 0;
     padding: 7.5rem 2.5rem;
-    background: none;
-    /*TODO: Remove?*/
-  }
-
-  /*TEMP*/
-  .site-info {
-    width: 22.5%;
   }
 
   .site-title {
     line-height: 1.15;
     display: block;
     width: calc(100% - 2rem);
-  }
-
-  .site-info-content {
-    height: auto;
-    /*TODO: Remove?*/
   }
 
   .site-description {
@@ -653,7 +631,7 @@ hr {
     max-width: 30rem;
   }
 }
-/* large desktops and up */
+/* Desktops and up */
 @media screen and (min-width: 1200px) {
   .site-info {
     width: 20%;
@@ -699,6 +677,7 @@ hr {
     object-fit: cover;
   }
 }
+/* Large desktops and up */
 @media screen and (min-width: 1600px) {
   body {
     max-width: 1600px;

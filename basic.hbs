@@ -22,7 +22,7 @@
 
   {{!-- Prevent flashing of certain elements with CSS transitions on load --}}
   <script>
-    document.addEventListener('DOMContentLoaded', function() { console.log('hi'); document.querySelector('body').classList.remove('loading'); });
+    document.addEventListener('DOMContentLoaded', function() { document.querySelector('body').classList.remove('loading'); });
   </script>
 </head>
 <body class="{{body_class}} loading">
