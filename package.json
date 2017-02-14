@@ -2,7 +2,7 @@
     "name": "boo",
     "description": "A slim, straight-forward Ghost theme for single authors.",
     "demo": "",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "engines": {
         "ghost": ">=0.9.0 <1.0.0"
     },
